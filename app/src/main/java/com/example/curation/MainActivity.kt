@@ -14,6 +14,7 @@ class MainActivity : AppCompatActivity() {
         for(i in 1..10){
             val myModel = FlowerModel(null,"장미 꽃 $i", null, null)
             this.modelList.add(myModel)
+//            println("hello")
         }
     }
 }
