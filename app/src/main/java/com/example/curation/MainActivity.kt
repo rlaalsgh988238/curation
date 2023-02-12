@@ -2,19 +2,30 @@ package com.example.curation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.LayoutInflater
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.curation.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
-    var modelList = ArrayList<FlowerModel>()
+    lateinit var binding : ActivityMainBinding
+    lateinit var adapter: FlowerRecyclerAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        for(i in 1..10){
-            val myModel = FlowerModel(null,"장미 꽃 $i", null, null)
-            this.modelList.add(myModel)
-//            println("hello")
-        }
+//        데이터 갱신
+        Data.dataUpdate()
+        adapter = FlowerRecyclerAdapter(this)
+
+//        리사이클러 뷰 생성
+        makeRecyclerView()
+    }
+
+    private fun makeRecyclerView() {
+        binding.flowerRecyclerView.layoutManager = LinearLayoutManager(this)
+        binding.flowerRecyclerView.adapter = adapter
     }
 }
