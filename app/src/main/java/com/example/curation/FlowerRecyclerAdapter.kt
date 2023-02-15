@@ -25,6 +25,8 @@ class FlowerRecyclerAdapter(val context: Context): RecyclerView.Adapter<Recycler
                 .into(holder.image) // 이미지를 넣을 뷰
         }
         binding.bind(Data.flowerData[position])
+
+
     }
 
     override fun getItemCount(): Int  = Data.flowerData.size

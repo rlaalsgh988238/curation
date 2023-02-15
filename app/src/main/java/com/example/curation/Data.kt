@@ -31,7 +31,17 @@ object Data {
 
     }
 //    꽃 데이터 탐색 -> detail page를 들어갈 때 꽃의 이름을 통해서 전달해 줌
-    fun dataSearch() {
+/*
+    fun dataSearch(id: String): FlowerModel {
+        var dcount = flowerData.count()-1
+        var index: Int
 
+        for (i in 0..dcount){
+
+
+            index = i
+        }
+        return flowerData[i]    //원하는 데이터의 index를 참조해서 알려줌 ?
     }
+*/
 }
