@@ -23,7 +23,7 @@ fun main(){
     Data.dataUpdate()
     var index: Int = 0
 
-    Data.flowerData[index].name
+    println(Data.flowerData[index].name)
     Data.flowerData[index].language
     Data.flowerData[index].content
 }
