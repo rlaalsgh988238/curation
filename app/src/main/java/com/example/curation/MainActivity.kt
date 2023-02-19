@@ -1,12 +1,11 @@
 package com.example.curation
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.LayoutInflater
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.curation.Data.Data
+import com.example.curation.RecyclerView.FlowerRecyclerAdapter
 import com.example.curation.databinding.ActivityMainBinding
-import com.example.curation.detailPage.DetailActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -18,12 +17,6 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        /*temporary*/
-        binding.pass.setOnClickListener{
-            val intent = Intent(this,DetailActivity::class.java)
-            startActivity(intent)
-        }
-
 //        데이터 갱신
         Data.dataUpdate()
 //        Data.flowerData.sortedWith(Comparator(OrderKoreanFirst::compare))
@@ -32,7 +25,6 @@ class MainActivity : AppCompatActivity() {
 
 //        리사이클러 뷰 생성
         makeRecyclerView()
-
     }
 
 //    리사이클러 뷰 생성

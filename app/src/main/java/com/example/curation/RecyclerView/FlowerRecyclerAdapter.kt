@@ -1,12 +1,15 @@
-package com.example.curation
+package com.example.curation.RecyclerView
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.curation.Data.Data
+import com.example.curation.R
 import com.example.curation.databinding.FlowerRecyclerViewItemBinding
-import java.util.concurrent.Flow
+import com.example.curation.detailPage.DetailActivity
 
 class FlowerRecyclerAdapter(val context: Context): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
@@ -26,6 +29,12 @@ class FlowerRecyclerAdapter(val context: Context): RecyclerView.Adapter<Recycler
                 .into(holder.image) // 이미지를 넣을 뷰
         }
         binding.bind(Data.flowerData[position])
+
+        binding.container.setOnClickListener {
+            val intent = Intent(context, DetailActivity::class.java)
+            intent.putExtra("index", Data.flowerData[position].id)
+            context.startActivity(intent)
+        }
     }
 
     override fun getItemCount(): Int  = Data.flowerData.size

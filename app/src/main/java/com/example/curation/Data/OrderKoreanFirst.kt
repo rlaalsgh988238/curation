@@ -1,4 +1,4 @@
-package com.example.curation
+package com.example.curation.Data
 
 object OrderKoreanFirst {
     private const val LEFT = -1
@@ -19,7 +19,8 @@ object OrderKoreanFirst {
                 return  if(conditionKoreanAndEnglish(lc, rc)     // 2. 한글이 포함된 경우 또는 영어&숫자 조합인 경우
                         || conditionKoreanAndNumber(lc, rc)
                         || conditionEnglishAndNumber(lc, rc)
-                        || conditionKoreanAndSpecial(lc, rc))
+                        || conditionKoreanAndSpecial(lc, rc)
+                )
                             -(lc-rc)
                         else if (conditionEnglishAndSpecial(lc, rc) || conditionNumberAndSpecial(lc, rc)){      // 2. 영&특, 수&특 의 조합인 경우
                             if(isEnglish(lc) || isNumber(lc)) LEFT
@@ -35,7 +36,7 @@ object OrderKoreanFirst {
     private fun isNumber(ch: Char) : Boolean = ch in '0'..'9'                                                                               //48~57                     ASCII
     private fun isSpecial(ch: Char) : Boolean = ch in '!'..'/' || ch in ':'..'@' || ch in '['..'`' || ch in '{'..'~'      //33..126 광범위하게 널려 있음    ASCII
 
-    private fun conditionKoreanAndEnglish(c1: Char, c2: Char) = isKorean(c1) && isEnglish(c2) || isEnglish(c1)&& isKorean(c2)
+    private fun conditionKoreanAndEnglish(c1: Char, c2: Char) = isKorean(c1) && isEnglish(c2) || isEnglish(c1) && isKorean(c2)
     private fun conditionKoreanAndNumber(c1: Char, c2: Char) = isKorean(c1) && isNumber(c2) || isNumber(c1) && isKorean(c2)
     private fun conditionKoreanAndSpecial(c1: Char, c2: Char) = isKorean(c1) && isSpecial(c2) || isSpecial(c1) && isKorean(c2)
     private fun conditionEnglishAndNumber(c1: Char, c2: Char) = isEnglish(c1) && isNumber(c2) || isNumber(c1) && isEnglish(c2)
