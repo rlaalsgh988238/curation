@@ -16,6 +16,7 @@ class FlowerRecyclerAdapter(val context: Context): RecyclerView.Adapter<Recycler
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         val binding = (holder as FlowerViewHolder)
 
+//        각 위치에 데이터를 놓는다.
         binding.apply {
             Glide.with(context)
                 .load(Data.flowerData[position].profileImage) // 불러올 이미지 url
