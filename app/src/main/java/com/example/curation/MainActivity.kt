@@ -18,12 +18,6 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        /*temporary*/
-        binding.pass.setOnClickListener{
-            val intent = Intent(this,DetailActivity::class.java)
-            startActivity(intent)
-        }
-
 //        데이터 갱신
         Data.dataUpdate()
 //        Data.flowerData.sortedWith(Comparator(OrderKoreanFirst::compare))
@@ -32,7 +26,6 @@ class MainActivity : AppCompatActivity() {
 
 //        리사이클러 뷰 생성
         makeRecyclerView()
-
     }
 
 //    리사이클러 뷰 생성

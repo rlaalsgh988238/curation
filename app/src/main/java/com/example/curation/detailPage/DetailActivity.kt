@@ -16,14 +16,8 @@ class DetailActivity : AppCompatActivity() {
         DeatailActivityBinding = ActivityDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+//        val index = intent.getIntExtra("index")
+
         binding.detailName.setText("안뇽")
     }
-}
-fun main(){
-    Data.dataUpdate()
-    var index: Int = 0
-
-    println(Data.flowerData[index].name)
-    Data.flowerData[index].language
-    Data.flowerData[index].content
 }
