@@ -1,4 +1,4 @@
-package com.example.curation
+package com.example.curation.Data
 
 class FlowerModel(
     var id: Int,

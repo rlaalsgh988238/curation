@@ -1,12 +1,11 @@
 package com.example.curation
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.LayoutInflater
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.curation.Data.Data
+import com.example.curation.RecyclerView.FlowerRecyclerAdapter
 import com.example.curation.databinding.ActivityMainBinding
-import com.example.curation.detailPage.DetailActivity
 
 class MainActivity : AppCompatActivity() {
 

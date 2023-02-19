@@ -1,8 +1,7 @@
-package com.example.curation
+package com.example.curation.RecyclerView
 
-import android.view.View
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
+import com.example.curation.Data.FlowerModel
 import com.example.curation.databinding.FlowerRecyclerViewItemBinding
 
 class FlowerViewHolder(itemView: FlowerRecyclerViewItemBinding): RecyclerView.ViewHolder(itemView.root) {

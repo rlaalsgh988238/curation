@@ -2,9 +2,6 @@ package com.example.curation.detailPage
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.bumptech.glide.Glide
-import com.example.curation.Data
-import com.example.curation.R
 import com.example.curation.databinding.ActivityDetailBinding
 
 class DetailActivity : AppCompatActivity() {
