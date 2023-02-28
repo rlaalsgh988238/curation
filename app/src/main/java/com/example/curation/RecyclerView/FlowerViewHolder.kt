@@ -21,7 +21,7 @@ class FlowerViewHolder(itemView: FlowerRecyclerViewItemBinding): RecyclerView.Vi
         name.text = "이름 : " + myModel.name
         language.text = "꽃말 : " + myModel.language
         story.text = myModel.content
-/*
+/* -> context 때문에 Glide를 여기에서 사용안하고 RecyclerViewAdapter에서 사용한다.
     Glide.with(context)
         .load(myModel.profileImage) // 불러올 이미지 url
         .placeholder(R.drawable.ic_launcher_background) // 이미지 로딩 시작하기 전 표시할 이미지

@@ -1,18 +1,30 @@
 package com.example.curation.Data
 
-class FlowerModel(
-    var id: Int,
-    var profileImage: String?,
-    var name: String?,
-    var language: String?,
-    var content: String?,
+import java.sql.ClientInfoStatus
+import java.time.LocalDateTime
+
+data class ApiData(
+    val message: String,
+    val data: FlowerModel,
+    val timestamp: LocalDateTime,
+    val status: Int
+)
+data class FlowerModel(
+    var id: Int? = 0,
+    var name: String? = "",
+    var profileImage: String? = "",
+    var language: String? = "",
+    var content: String? = "",
     var stickImage: ArrayList<String>
-) {
-//    기본 생성자
-    init {
+)
 
-    }
-}
+data class ReceiveData(
+    var flower_id: Int,
+    var flower_name: String,
+    var flower_profile_img_url: String,
+    var flower_floriography: String,
+    var flower_story: String,
+    var flower_pictures_url: ArrayList<String>
+)
 
-//flower id: Int인 파라미터 추가 필요!
 //Data.search() 또한 이 flower_id로 찾을 예정
