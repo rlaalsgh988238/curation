@@ -2,6 +2,7 @@ package com.example.curation.RecyclerView
 
 import android.content.Context
 import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -10,6 +11,7 @@ import com.example.curation.Data.Data
 import com.example.curation.R
 import com.example.curation.databinding.FlowerRecyclerViewItemBinding
 import com.example.curation.detailPage.DetailActivity
+import com.example.curation.utils.Constants.TAG
 
 class FlowerRecyclerAdapter(val context: Context): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
@@ -31,8 +33,10 @@ class FlowerRecyclerAdapter(val context: Context): RecyclerView.Adapter<Recycler
         binding.bind(Data.flowerData[position])
 
         binding.container.setOnClickListener {
+            Log.d(TAG, "FlowerRecyclerAdapter - container.setOnClickListener() 시작")
             val intent = Intent(context, DetailActivity::class.java)
             intent.putExtra("index", Data.flowerData[position].id)
+            Log.d(TAG, "FlowerRecyclerAdapter - container.setOnClickListener() intent 값 전달")
             context.startActivity(intent)
         }
     }

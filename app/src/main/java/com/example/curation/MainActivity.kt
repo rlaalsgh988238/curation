@@ -2,10 +2,12 @@ package com.example.curation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.curation.Data.Data
 import com.example.curation.RecyclerView.FlowerRecyclerAdapter
 import com.example.curation.databinding.ActivityMainBinding
+import com.example.curation.utils.Constants.TAG
 
 class MainActivity : AppCompatActivity() {
 
@@ -18,10 +20,12 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
 //        데이터 갱신
-        Data.dataUpdate()
+        Log.d(TAG, "MainActivity - Data 업데이트 전")
+        adapter = FlowerRecyclerAdapter(this)
+        Data.dataUpdate(this, adapter)
+        Log.d(TAG, "MainActivity - Data 업데이트 후")
 //        Data.flowerData.sortedWith(Comparator(OrderKoreanFirst::compare))
 //        Data.flowerData.sortWith(Comparator(OrderKoreanFirst::compare))
-        adapter = FlowerRecyclerAdapter(this)
 
 //        리사이클러 뷰 생성
         makeRecyclerView()
