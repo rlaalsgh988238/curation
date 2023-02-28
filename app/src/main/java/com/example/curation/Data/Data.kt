@@ -40,6 +40,8 @@ object Data {
                         val data = gson.fromJson(temp, ReceiveData::class.java)
                         flowerData.add(FlowerModel(data.flower_id, data.flower_name, data.flower_profile_img_url, data.flower_floriography, data.flower_story, data.flower_pictures_url))
                     }
+//                    dataSort()를 위해서 임의로 추가함
+                    flowerData.shuffle()
 
                     Log.d(TAG, "flowerData : ${flowerData.count()} 안의 데이터 : $flowerData \n data : ${data.length()}")
                 }
@@ -60,6 +62,13 @@ object Data {
     }
 //    꽃 데이터 정렬 -> 꽃의 이름 순으로 정렬함
     fun dataSort() {
+//        flowerData.sortedWith(Comparator<>(OrderKoreanFirst::compare)) -> 정렬된 새로운 객체 생성
+//        flowerData.sortWith(Comparator(OrderKoreanFirst::compare))     -> 기존의 객체를 정렬
+
+        flowerData.sortWith {       //-> 기존의 객체를 정렬
+            o1, o2 -> OrderKoreanFirst.compare(o1.name.toString(), o2.name.toString())
+        }
+
 
     }
 //    꽃 데이터 탐색 -> detail page를 들어갈 때 꽃의 id를 통해서 전달해 줌
