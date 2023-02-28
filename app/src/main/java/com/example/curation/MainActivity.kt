@@ -24,8 +24,11 @@ class MainActivity : AppCompatActivity() {
         adapter = FlowerRecyclerAdapter(this)
         Data.dataUpdate(this, adapter)
         Log.d(TAG, "MainActivity - Data 업데이트 후")
-//        Data.flowerData.sortedWith(Comparator(OrderKoreanFirst::compare))
-//        Data.flowerData.sortWith(Comparator(OrderKoreanFirst::compare))
+
+        binding.tempBtn.setOnClickListener {
+            Data.dataSort()
+            adapter.notifyDataSetChanged()
+        }
 
 //        리사이클러 뷰 생성
         makeRecyclerView()
