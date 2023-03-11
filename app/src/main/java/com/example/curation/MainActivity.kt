@@ -26,6 +26,7 @@ class MainActivity : AppCompatActivity() {
         Data.dataUpdate(this, adapter)
         Log.d(TAG, "MainActivity - Data 업데이트 후")
 
+
         binding.tempBtn.setOnClickListener {
             Data.dataSort()
             adapter.notifyDataSetChanged()
