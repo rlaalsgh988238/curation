@@ -19,6 +19,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
 //        데이터 갱신
         Log.d(TAG, "MainActivity - Data 업데이트 전")
         adapter = FlowerRecyclerAdapter(this)
