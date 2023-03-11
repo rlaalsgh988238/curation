@@ -9,6 +9,8 @@ import com.example.curation.RecyclerView.FlowerRecyclerAdapter
 import com.example.curation.databinding.ActivityMainBinding
 import com.example.curation.utils.Constants.TAG
 
+// release
+
 class MainActivity : AppCompatActivity() {
 
     lateinit var binding : ActivityMainBinding
