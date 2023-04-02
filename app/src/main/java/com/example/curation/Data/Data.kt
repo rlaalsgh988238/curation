@@ -40,6 +40,11 @@ object Data {
                         val data = gson.fromJson(temp, ReceiveData::class.java)
                         flowerData.add(FlowerModel(data.flower_id, data.flower_name, data.flower_profile_img_url, data.flower_floriography, data.flower_story, data.flower_pictures_url))
                     }
+
+                    //
+
+
+                    //
 //                    dataSort()를 위해서 임의로 추가함
                     flowerData.shuffle()
 

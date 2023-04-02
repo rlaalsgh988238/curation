@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name = "android.permission.POST_NOTFICATIONS"/>
 
     <application
         android:allowBackup="true"
@@ -13,9 +14,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Curation"
-        tools:targetApi="31"
-        android:usesCleartextTraffic="true">
-        <!--API:http를 사용하기 위해서 추가해준 내용 : usesCleartextTraffic="true"-->
+        android:usesCleartextTraffic="true"
+        tools:targetApi="31">
+        <activity
+            android:name=".login.LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" /> <!-- API:http를 사용하기 위해서 추가해준 내용 : usesCleartextTraffic="true" -->
         <activity
             android:name=".detailPage.DetailActivity"
             android:exported="false">
@@ -24,7 +30,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".login.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

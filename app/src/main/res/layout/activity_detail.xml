@@ -32,10 +32,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="content"/>
-            <ImageView
-                android:id="@+id/detail_stickImage"
+            <androidx.viewpager2.widget.ViewPager2
+                android:backgroundTint="@color/teal_700"
+                android:id="@+id/StoryFragment"
+                android:background="@drawable/round_background"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="200dp"/>
         </LinearLayout>
     </ScrollView>
 
